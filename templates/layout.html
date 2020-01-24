@@ -14,8 +14,10 @@
         <link rel="stylesheet" href="css/home.css">
     </head>
     <body>
-        {% include 'static/_navbar.html' %}
-        {% block body %}{% endblock %}
+        {% include 'includes/_navbar.html' %}
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
 
         <!-- Jquery first, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
