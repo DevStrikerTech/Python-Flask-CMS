@@ -1,6 +1,7 @@
 from flask import Flask, render_template, flash, redirect, url_for, session, request, logging
 from flask_mysqldb import MySQL
-from wtforms import Form, StringField, TextAreaField, PasswordField, validators
+from wtforms import Form, PasswordField, validators
+from wtforms.fields.html5 import EmailField
 from passlib.hash import sha256_crypt
 
 app = Flask(__name__)
@@ -10,9 +11,9 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
-# Register form using WTForms
+# Register form using WTForms(RegisterForm Class)
 class RegisterForm(Form):
-    email = StringField('Email', [validators.Length(min=6, max=50)])
+    email = EmailField('Email', [validators.DataRequired(), validators.Email()])
     password = PasswordField('Password', [
         validators.DataRequired(),
         validators.EqualTo('confirm', message='Password do not match')
@@ -23,6 +24,9 @@ class RegisterForm(Form):
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegisterForm(request.form)
+    if request.method == 'POST' and form.validate():
+        return render_template('register.html')
+    return render_template('register.html', form=form)
 
 if __name__ == '__main__':
     app.run()
