@@ -1,9 +1,11 @@
+import os
 from flask import Flask, render_template, flash, redirect, url_for, session, request, logging
 from flask_mysqldb import MySQL
 from wtforms import Form, StringField, PasswordField, validators
 from passlib.hash import sha256_crypt
 
 app = Flask(__name__)
+app.secret_key = os.urandom(24)
 
 # Config MySQL
 app.config['MYSQL_HOST'] = 'localhost'
@@ -37,7 +39,21 @@ class RegisterForm(Form):
 def register():
     form = RegisterForm(request.form)
     if request.method == 'POST' and form.validate():
-        return render_template('register.html')
+        email = form.email.data
+        password = sha256_crypt.encrypt(str(form.password.data))
+
+        # Create Cursor
+        cur = mysql.connection.cursor()
+        # Execute query
+        cur.execute("INSERT INTO users(email, password) VALUES(%s, %s)", (email, password))
+        # Commit to DB
+        mysql.connection.commit()
+        # Close Connection
+        cur.close
+
+        flash('you are now register and can now log in', 'success')
+
+        return redirect(url_for('home'))
     return render_template('register.html', form=form)
 
 if __name__ == '__main__':
