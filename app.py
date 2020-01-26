@@ -18,7 +18,7 @@ app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app)
 
 # Route for home.html served as index page
-# User login
+# Provides user login capabilities
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
@@ -42,11 +42,11 @@ def home():
                 app.logger.info('Password Matched')
                 print('Password Matched')
             else:
-                app.logger.info('Password Not Matched')
-                print('Password Not Matched')
+                error = 'Invalid login'
+                return render_template('home.html', error=error)
         else:
-            app.logger.info('User not found')
-            print('User not found')
+            error = 'Email is not registered'
+            return render_template('home.html', error=error)
 
     return render_template('home.html')
 
