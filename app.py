@@ -39,11 +39,15 @@ def home():
 
             # Compare password
             if sha256_crypt.verify(password_candidate, password):
-                app.logger.info('Password Matched')
-                print('Password Matched')
+                # Passed
+                session['logged_in'] = True
+                session['email'] = email
+                return redirect(url_for('dashboard'))
             else:
                 error = 'Invalid login'
                 return render_template('home.html', error=error)
+            # Close Connection
+            cur.close()
         else:
             error = 'Email is not registered'
             return render_template('home.html', error=error)
@@ -83,6 +87,11 @@ def register():
 
         return redirect(url_for('home'))
     return render_template('register.html', form=form)
+
+# Route to dashboard
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
