@@ -3,6 +3,7 @@ from flask import Flask, render_template, flash, redirect, url_for, session, req
 from flask_mysqldb import MySQL
 from wtforms import Form, StringField, PasswordField, validators
 from passlib.hash import sha256_crypt
+from functools import wraps
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
@@ -95,8 +96,20 @@ def register():
         return redirect(url_for('home'))
     return render_template('register.html', form=form)
 
+# Access control
+def login_required(wrapped):
+    @wraps(wrapped)
+    def decorated_function(*args, **kwargs):
+        if 'logged_in' in session:
+            return wrapped(*args, **kwargs)
+        else:
+            flash('Not authorised, please login', 'danger')
+            return redirect(url_for('home'))
+    return decorated_function
+
 # Route for dashboard
 @app.route('/dashboard')
+@login_required
 def dashboard():
     return render_template('dashboard.html')
 
