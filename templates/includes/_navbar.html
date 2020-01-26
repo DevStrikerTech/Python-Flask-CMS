@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -10,20 +10,29 @@
             </button>
             <a class="navbar-brand" href="/">MyFlaskApp</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right" method="post">
-                {% if session.logged_in %}
-                    <a class="btn btn-danger" href="/logout" role="button">Logout</a>
-                {% else %}
-                    <div class="form-group">
-                        <input type="email"  name="email" placeholder="Email" class="form-control" value="{{ request.form.email }}" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" name="password" placeholder="Password" class="form-control" value="{{ request.form.password }}" required>
-                    </div>
-                    <button type="submit" class="btn btn-success">Sign in</button>
-                {% endif %}
-            </form>
-        </div><!--/.navbar-collapse -->
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <form class="navbar-form navbar-right" method="post">
+                    {% if session.logged_in %}
+                        <a class="btn btn-link" href="/dashboard" role="button"><span id="welcome">Welcome, {{ session.email }}</span></a>
+                        <a class="btn btn-danger" href="/logout" role="button">Logout</a>
+                    {% else %}
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email" class="form-control"
+                                   value="{{ request.form.email }}" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" placeholder="Password" class="form-control"
+                                   value="{{ request.form.password }}" required>
+                        </div>
+                        <button type="submit" class="btn btn-success">Sign in</button>
+                    {% endif %}
+                </form>
+            </ul>
+        </div><!--/.nav-collapse -->
     </div>
 </nav>
