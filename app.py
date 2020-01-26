@@ -18,8 +18,36 @@ app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app)
 
 # Route for home.html served as index page
-@app.route('/')
+# User login
+@app.route('/', methods=['GET', 'POST'])
 def home():
+    if request.method == 'POST':
+        # Get form fields
+        email = request.form['email']
+        password_candidate = request.form['password']
+
+        # Create cursor
+        cur = mysql.connection.cursor()
+
+        # Get user by email
+        result = cur.execute("SELECT * FROM users WHERE email = %s", [email])
+
+        if result > 0:
+            # Get stored hash
+            data = cur.fetchone()
+            password = data['password']
+
+            # Compare password
+            if sha256_crypt.verify(password_candidate, password):
+                app.logger.info('Password Matched')
+                print('Password Matched')
+            else:
+                app.logger.info('Password Not Matched')
+                print('Password Not Matched')
+        else:
+            app.logger.info('User not found')
+            print('User not found')
+
     return render_template('home.html')
 
 # Register Form using WTForms RegisterForm Class
@@ -57,4 +85,4 @@ def register():
     return render_template('register.html', form=form)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
