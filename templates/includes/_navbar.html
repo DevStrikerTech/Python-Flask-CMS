@@ -16,7 +16,7 @@
                 <li><a href="/contact">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <form class="navbar-form navbar-right" method="post">
+                <form class="navbar-form navbar-right" method="post" action="">
                     {% if session.logged_in %}
                         <a class="btn btn-link" href="/dashboard" role="button"><span id="welcome">Welcome, {{ session.email }}</span></a>
                         <a class="btn btn-danger" href="/logout" role="button">Logout</a>
@@ -30,6 +30,7 @@
                                    value="{{ request.form.password }}" required>
                         </div>
                         <button type="submit" class="btn btn-success">Sign in</button>
+                        <a class="btn btn-warning" href="/register" role="button">Register</a>
                     {% endif %}
                 </form>
             </ul>
