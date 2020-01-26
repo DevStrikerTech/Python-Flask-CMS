@@ -54,6 +54,13 @@ def home():
 
     return render_template('home.html')
 
+# Route for logout
+@app.route('/logout')
+def logout():
+    session.clear()
+    flash('You are now logged out', 'success')
+    return redirect(url_for('home'))
+
 # Register Form using WTForms RegisterForm Class
 class RegisterForm(Form):
     email = StringField('Email', [
@@ -88,7 +95,7 @@ def register():
         return redirect(url_for('home'))
     return render_template('register.html', form=form)
 
-# Route to dashboard
+# Route for dashboard
 @app.route('/dashboard')
 def dashboard():
     return render_template('dashboard.html')
