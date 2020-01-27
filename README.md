@@ -36,7 +36,7 @@ app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'myflaskapp'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 ```
->Note: Don't forget to change MySQL host, username, password and database name
+>Note: Don't forget to change MySQL host, username, password and database name based on your setup
 
 >TO-DO: Run app.py and copy localhost url to your web browser
 
