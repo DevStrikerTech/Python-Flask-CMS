@@ -1,4 +1,4 @@
-# Python-Flask-CMS&#127798;
+# &#127798;Python-Flask-CMS
 <p align="center">
   <b>--Dashboard--</b><br>
   <img src="https://raw.githubusercontent.com/KingCobra2018/Python-Flask-CMS/master/static/dashboard.png">
