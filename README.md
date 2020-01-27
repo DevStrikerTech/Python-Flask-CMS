@@ -14,18 +14,28 @@
 
 # Installation
 Install latest version of Python3
+
 Install pip 
+
 pip install pipenv
+
 Clone repository and open projet folder finally execute cmd from search panel 
+
 pipenv shell
+
 pipenv install flask
+
 pipenv install flask-mysqldb
+
 pipenv install flask-WTF
+
 pipenv install passlib
+
 Run app.py
 
 # MySQL Setup
 
 # Documentation
 http://flask.palletsprojects.com/en/1.1.x/
+
 https://wtforms.readthedocs.io/en/stable/
