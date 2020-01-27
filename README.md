@@ -16,9 +16,9 @@
 Install latest version of Python3
 
 Install pip 
-
+```python
 pip install pipenv
-
+```
 Clone repository and open projet folder finally execute cmd from search panel 
 
 pipenv shell
