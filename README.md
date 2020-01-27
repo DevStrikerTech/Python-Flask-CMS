@@ -34,6 +34,9 @@ pipenv install passlib
 Run app.py
 
 ## MySQL Setup
+```sql
+CREATE DATABASE myflaskapp;
+```
 
 ## Documentation
 http://flask.palletsprojects.com/en/1.1.x/
