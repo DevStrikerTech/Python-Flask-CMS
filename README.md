@@ -8,7 +8,7 @@
 ```bash
 pip install pipenv
 ```
-=> Clone repository and open projet folder finally execute cmd from search panel 
+=> Clone repository and open project folder finally execute following on command promt/terminal
 ```bash
 pipenv shell
 pipenv install flask
