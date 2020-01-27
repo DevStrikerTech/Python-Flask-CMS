@@ -22,13 +22,9 @@ pip install pipenv
 Clone repository and open projet folder finally execute cmd from search panel 
 ```bash
 pipenv shell
-
 pipenv install flask
-
 pipenv install flask-mysqldb
-
 pipenv install flask-WTF
-
 pipenv install passlib
 ```
 Run app.py
@@ -36,6 +32,8 @@ Run app.py
 ## MySQL Setup
 ```sql
 CREATE DATABASE myflaskapp;
+USE myflaskapp;
+CREATE TABLE users(id INT(11));
 ```
 
 ## Documentation
