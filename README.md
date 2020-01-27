@@ -20,7 +20,7 @@ Install pip
 pip install pipenv
 ```
 Clone repository and open projet folder finally execute cmd from search panel 
-
+```python
 pipenv shell
 
 pipenv install flask
@@ -30,7 +30,7 @@ pipenv install flask-mysqldb
 pipenv install flask-WTF
 
 pipenv install passlib
-
+```
 Run app.py
 
 # MySQL Setup
