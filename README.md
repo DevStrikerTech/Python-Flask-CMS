@@ -12,7 +12,7 @@
   <img src="https://raw.githubusercontent.com/KingCobra2018/Python-Flask-CMS/master/static/register.png">
 </p>
 
-# Installation
+## Installation
 Install latest version of Python3
 
 Install pip 
@@ -33,9 +33,9 @@ pipenv install passlib
 ```
 Run app.py
 
-# MySQL Setup
+## MySQL Setup
 
-# Documentation
+## Documentation
 http://flask.palletsprojects.com/en/1.1.x/
 
 https://wtforms.readthedocs.io/en/stable/
