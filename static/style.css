@@ -1,4 +1,13 @@
+/* Body */
+body {
+    background: #f4f4f4;
+}
+
 /* Navbar */
+.navbar {
+    border-radius: 0 !important;
+}
+
 #welcome {
     color: #ecf0f1;
 }
@@ -70,7 +79,38 @@
     color: #ecdbff;
 }
 
-/* Header */
+/* Custom */
+.main-color-bg {
+    background-color: #9b59b6 !important;
+    border-color: #8e44ad !important;
+    color: #ffffff;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+.breadcrumb a {
+    color: #000000 !important;
+}
+
+/* Progress Bars */
+.progress-bar {
+    background-color: #9b59b6;
+    color: #ffffff;
+}
+
+/* Panel Title */
+.panel-title {
+    color: #ffffff;
+}
+
+/*Widget Box*/
+.dash-box {
+    text-align: center;
+}
 
 /* Media Query */
 @media (max-width: 767px) {
