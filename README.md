@@ -39,7 +39,7 @@ DESCRIBE users;
 ```
 
 ## Usage
-From project folder open app.py and configure MySQL
+=> From project folder open app.py and configure MySQL
 ```python
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
@@ -47,9 +47,9 @@ app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'myflaskapp'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 ```
-Note: Don't forget to change MySQL host, username, password and database name.
+Note: Don't forget to change MySQL host, username, password and database name
 
-TO-DO: Run app.py and copy localhost url to your web browser.
+TO-DO: Run app.py and copy localhost url to your web browser
 
 ## Documentation
 http://flask.palletsprojects.com/en/1.1.x/
