@@ -1,16 +1,5 @@
 # &#127798;Python-Flask-CMS
-<p align="center">
-  <b>--Dashboard--</b><br>
-  <img src="https://raw.githubusercontent.com/KingCobra2018/Python-Flask-CMS/master/static/dashboard.png">
-</p>
-<p align="center">
-  <b>--Index--</b><br>
-  <img src="https://raw.githubusercontent.com/KingCobra2018/Python-Flask-CMS/master/static/index.png">
-</p>
-<p align="center">
-  <b>--Register--</b><br>
-  <img src="https://raw.githubusercontent.com/KingCobra2018/Python-Flask-CMS/master/static/register.png">
-</p>
+
 
 ## Installation
 => Install latest version of Python3
@@ -55,3 +44,5 @@ TO-DO: Run app.py and copy localhost url to your web browser
 http://flask.palletsprojects.com/en/1.1.x/
 
 https://wtforms.readthedocs.io/en/stable/
+
+https://flask-mysqldb.readthedocs.io/en/latest/
