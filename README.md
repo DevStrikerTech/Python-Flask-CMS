@@ -13,13 +13,13 @@
 </p>
 
 ## Installation
-Install latest version of Python3
+=> Install latest version of Python3
 
-Install pip 
+=> Install pip 
 ```bash
 pip install pipenv
 ```
-Clone repository and open projet folder finally execute cmd from search panel. 
+=> Clone repository and open projet folder finally execute cmd from search panel 
 ```bash
 pipenv shell
 pipenv install flask
@@ -29,10 +29,13 @@ pipenv install passlib
 ```
 
 ## MySQL Setup
+=> Execute following sql commands/statements to have required database
 ```sql
 CREATE DATABASE myflaskapp;
 USE myflaskapp;
-CREATE TABLE users(id INT(11) AUTO_INCREMENT PRIMARY KEY);
+CREATE TABLE users(id INT(11) AUTO_INCREMENT PRIMARY KEY, email VARCHAR(100), password VARCHAR(100), register_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+SHOW TABLES;
+DESCRIBE users;
 ```
 
 ## Usage
