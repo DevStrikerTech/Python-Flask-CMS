@@ -1,4 +1,6 @@
-# &#127798;Python-Flask-CMS
+[![atl-text-1](https://img.shields.io/badge/Version-1.1.x-red?logo=Flask&style=flat)](https://flask.palletsprojects.com/en/1.1.x/) [![atl-text-2](https://img.shields.io/badge/License-MIT-red?logo=License&style=flat)](https://github.com/KingCobra2018/Python-Flask-CMS/blob/master/LICENSE)
+
+# Python-Flask-CMS
 ![alt text](https://raw.githubusercontent.com/KingCobra2018/Python-Flask-CMS/master/static/Demo.gif)
 
 ## Installation
